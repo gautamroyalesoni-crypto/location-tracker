@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Location</title>
+</head>
+<body>
+
+<h2>Getting location...</h2>
+
+<script>
+if (navigator.geolocation) {
+navigator.geolocation.getCurrentPosition(function(position) {
+
+let lat = position.coords.latitude;
+let lon = position.coords.longitude;
+
+let map = "https://www.google.com/maps?q="+lat+","+lon;
+
+document.body.innerHTML =
+"<h3>Location captured</h3><a href='"+map+"'>Open Map</a>";
+
+});
+}
+</script>
+
+</body>
+</html>
